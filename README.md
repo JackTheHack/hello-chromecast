@@ -21,3 +21,5 @@ Instructions
 
 
 Note: There are still some kinks Google is ironing out with whitelisting and debugging the Chromecast. StackOverflow has a lot of useful answers if you run into trouble.
+
+Note2: If you can't see the cast button - check that you registered your Chromecast in the developer console and that its turned on.
