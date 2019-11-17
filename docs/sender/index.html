@@ -34,6 +34,10 @@
 		receiverApplicationId: castAppId,
 		autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
 	  });
+	  var castState = cast.framework.CastContext.getInstance().getCastState();
+	  console.log(castState);
+	  var status = document.getElementById("status");
+	  status.innerHTML = castState;
 	};
 
 	initializeApi = function() { 
@@ -58,6 +62,7 @@
 <body>
 	<h1>Hello Chromecast</h1>
 	<h2>Google Cast Sender</h2>
+	<p id="status"></p>
 	<google-cast-launcher></google-cast-launcher>
 	</body>
 	</html>
