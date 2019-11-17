@@ -4,19 +4,14 @@
 
 <style>body { Helvetica; font-size: 3em; text-align: center; color: black; margin: 5%;}</style>
 
-<script src="https://www.gstatic.com/cast/js/receiver/1.0/cast_receiver.js"></script>
-<script type="text/javascript">
-
-	var	castAppId = '8C0E51BD';
-
-	var receiver = new cast.receiver.Receiver(castAppId, ['Test'], "", 5);
-
-	receiver.start();
-
-</script>
+<script src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
 
 <body>
 	<h1>Hello Chromecast</h1>
 	<h2>Google Cast Receiver</h2>
+	 <cast-media-player></cast-media-player>
+	  <script>
+		cast.framework.CastReceiverContext.getInstance().start();
+	  </script>
 	</body>
 	</html>
