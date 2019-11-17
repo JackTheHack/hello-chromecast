@@ -23,6 +23,19 @@
 		});
 	}
 
+	window['__onGCastApiAvailable'] = function(isAvailable) {
+	  if (isAvailable) {
+		initializeCastApi();
+	  }
+	};
+	
+	initializeCastApi = function() {
+	  cast.framework.CastContext.getInstance().setOptions({
+		receiverApplicationId: castAppId,
+		autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
+	  });
+	};
+
 	initializeApi = function() { 
 		cast_api = new cast.Api();
 		cast_api.addReceiverListener(castAppId, onReceiverList);
@@ -45,5 +58,6 @@
 <body>
 	<h1>Hello Chromecast</h1>
 	<h2>Google Cast Sender</h2>
+	<google-cast-launcher></google-cast-launcher>
 	</body>
 	</html>
